@@ -1,41 +1,17 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { EventContext, Styled } from 'direflow-component';
+import { Styled } from 'direflow-component';
 import styles from './App.css';
 
-const App = (props) => {
-  const dispatch = useContext(EventContext);
-
-  const handleClick = () => {
-    const event = new Event('my-event');
-    dispatch(event);
-  };
-
+const App = () => {
   useEffect(() => {
     const event = new Event('my-event');
     console.log("EVENT", event)
   })
 
-  const renderSampleList = props.sampleList.map((sample) => (
-    <div key={sample} className='sample-text'>
-      → {sample}
-    </div>
-  ));
-
   return (
     <Styled styles={styles}>
-      <div className='app'>
-        <div className='top'>
-          <div className='header-image' />
-        </div>
-        <div className='bottom'>
-          <div className='header-title'>{props.componentTitle}</div>
-          <div>{renderSampleList}</div>
-          <button className='button' onClick={handleClick}>
-            Click me!
-          </button>
-        </div>
-      </div>
+      <h1>ASDADSADSADSADSAD</h1>
     </Styled>
   );
 };
