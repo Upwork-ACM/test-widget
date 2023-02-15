@@ -11,6 +11,11 @@ const App = (props) => {
     dispatch(event);
   };
 
+  useEffect(() => {
+    const event = new Event('my-event');
+    console.log("EVENT", event)
+  })
+
   const renderSampleList = props.sampleList.map((sample) => (
     <div key={sample} className='sample-text'>
       → {sample}
@@ -24,7 +29,6 @@ const App = (props) => {
           <div className='header-image' />
         </div>
         <div className='bottom'>
-          {console.log(props)}
           <div className='header-title'>{props.componentTitle}</div>
           <div>{renderSampleList}</div>
           <button className='button' onClick={handleClick}>
@@ -43,13 +47,11 @@ App.defaultProps = {
     'Build as Web Component',
     'Use it anywhere!',
   ],
-  id: 'test'
 }
 
 App.propTypes = {
   componentTitle: PropTypes.string,
   sampleList: PropTypes.array,
-  id: PropTypes.string
 };
 
 export default App;
