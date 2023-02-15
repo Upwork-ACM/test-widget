@@ -4,7 +4,7 @@ import styles from './App.css';
 
 const App = () => {
   useEffect(() => {
-    const event = new Event('my-event');
+    const event = new Event('widget-component');
     console.log("EVENT", event)
   }, [])
 
